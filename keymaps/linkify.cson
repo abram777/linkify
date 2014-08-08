@@ -9,3 +9,4 @@
 # https://atom.io/docs/latest/advanced/keymaps
 '.editor':
   'alt-cmd-l': 'linkify'
+  'ctrl-alt-l': 'linkify'
