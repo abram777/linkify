@@ -7,7 +7,9 @@ Select the URL you want to convert and just press ```Cmd+Alt+L``` or ```Ctrl+Alt
 
 ![Screenshot](https://raw.githubusercontent.com/ibito/linkify/master/linkify.gif)
 
-Installing
+
+ 
+# Installing
 
 Use the Atom package manager, which can be found in the Settings view or run
 ```apm install linkify```
