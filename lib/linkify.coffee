@@ -6,7 +6,7 @@ module.exports =
 
   replaceURL: (text) ->
     exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i
-    text.replace(exp,"<a href='$1'>$1</a>")
+    text.replace(exp,'<a href="$1">$1</a>')
 
   convert: ->
     editor = atom.workspace.activePaneItem
