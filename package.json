@@ -1,0 +1,13 @@
+{
+  "name": "linkify",
+  "main": "./lib/linkify",
+  "version": "0.0.0",
+  "description": "Convert your URLs into HTML link tags",
+  "repository": "https://github.com/ibito/linkify",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
