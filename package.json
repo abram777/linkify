@@ -8,8 +8,5 @@
   "engines": {
     "atom": ">0.175.0"
   },
-  "dependencies": {},
-  "activationEvents": [
-    "linkify:make-link"
-  ]
+  "dependencies": {}
 }
