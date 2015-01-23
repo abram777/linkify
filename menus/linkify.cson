@@ -1,15 +1,11 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
-'context-menu':
-  '.overlayer':
-      'Enable linkify': 'linkify:toggle'
-
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'linkify'
+      'label': 'Linkify'
       'submenu': [
-        { 'label': 'Toggle', 'command': 'linkify:toggle' }
+        { 'label': 'Make Link', 'command': 'linkify:make-link' }
       ]
     ]
   }
