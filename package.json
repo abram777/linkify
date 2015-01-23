@@ -1,7 +1,7 @@
 {
   "name": "linkify",
   "main": "./lib/linkify",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Convert your URLs into HTML link tags",
   "repository": "https://github.com/ibito/linkify",
   "license": "MIT",
@@ -9,5 +9,7 @@
     "atom": ">0.175.0"
   },
   "dependencies": {},
-  "activationEvents": ["linkify:make-link"]
+  "activationEvents": [
+    "linkify:make-link"
+  ]
 }
