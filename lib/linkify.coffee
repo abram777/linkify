@@ -2,7 +2,8 @@ module.exports =
   linkifyView: null
 
   activate: (state) ->
-    atom.workspaceView.command "linkify", => @convert()
+    # atom.workspaceView.command "linkify", => @convert()
+    atom.commands.add 'atom-text-editor', 'linkify:make link', => @convert()
 
   replaceURL: (text) ->
     exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i

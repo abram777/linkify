@@ -6,7 +6,8 @@
   "repository": "https://github.com/ibito/linkify",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.175.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "activationEvents": ["linkify:make-link"],
 }
