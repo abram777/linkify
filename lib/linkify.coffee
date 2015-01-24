@@ -26,9 +26,8 @@ module.exports =
       this.count = 0
     else
       this.count = selectedText.match(this.linkExp).length
-      console.log(this.grammar.name)
       switch this.grammar.name
-        when "HTML", "Plain Text"
+        when "HTML", "Plain Text, Null Grammar"
           editor.insertText @replaceHtml selectedText
           @selectLinksTextHtml selectedText.length
 
