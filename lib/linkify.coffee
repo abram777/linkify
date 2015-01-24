@@ -45,7 +45,7 @@ module.exports =
 
   selectLinksTextGithubMd: (selectedTextLength)->
     if this.count < 2
-      anchorClosingTagLength = ")".length
+      anchorClosingTagLength = "]()".length + selectedTextLength
       cursor = atom.workspace.getActivePaneItem().cursors[0]
       cursor.moveLeft anchorClosingTagLength
       cursor.selection.selectLeft selectedTextLength
