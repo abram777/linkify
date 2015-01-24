@@ -26,14 +26,15 @@ module.exports =
       this.count = 0
     else
       this.count = selectedText.match(this.linkExp).length
-      switch this.grammar.name
-        when "HTML", "Plain Text, Null Grammar"
-          editor.insertText @replaceHtml selectedText
-          @selectLinksTextHtml selectedText.length
 
+      switch this.grammar.name
         when "GitHub Markdown"
           editor.insertText @replaceGithubMd selectedText
           @selectLinksTextGithubMd selectedText.length
+        else
+          editor.insertText @replaceHtml selectedText
+          @selectLinksTextHtml selectedText.length
+
 
   selectLinksTextHtml: (selectedTextLength)->
     if this.count < 2
