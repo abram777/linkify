@@ -8,6 +8,9 @@ Select the URL you want to convert and just press ```Cmd+Alt+L``` or ```Ctrl+Alt
 ![Screenshot](http://i.imgur.com/Sb9CNGu.gif)
 
 
+# Features
+* [Markdown](http://en.wikipedia.org/wiki/Markdown) support
+* Multiline support
 
 # Installing
 
