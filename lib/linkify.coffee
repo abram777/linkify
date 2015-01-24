@@ -1,5 +1,6 @@
 module.exports =
   linkifyView: null
+  count: 0
 
   activate: ->
     @commands = atom.commands.add 'atom-workspace', 'linkify:make-link', => @convert()
@@ -8,7 +9,8 @@ module.exports =
     @commands.dispose()
 
   replaceURL: (text) ->
-    exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/i
+    exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi
+    this.count = text.match(exp).length
     text.replace(exp,'<a href="$1">$1</a>')
 
   convert: ->
@@ -18,7 +20,8 @@ module.exports =
     @selectLinksText selectedText.length
 
   selectLinksText: (selectedTextLength)->
-    anchorClosingTagLength = "</a>".length
-    cursor = atom.workspace.getActivePaneItem().cursors[0]
-    cursor.moveLeft anchorClosingTagLength
-    cursor.selection.selectLeft selectedTextLength
+    if this.count < 2
+      anchorClosingTagLength = "</a>".length
+      cursor = atom.workspace.getActivePaneItem().cursors[0]
+      cursor.moveLeft anchorClosingTagLength
+      cursor.selection.selectLeft selectedTextLength
