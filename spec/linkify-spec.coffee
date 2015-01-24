@@ -53,19 +53,19 @@ describe "Linkify", ->
 
   describe "when linkify is toggled", ->
     beforeEach ->
-      buffer.setText "http://ibito.com"
+      buffer.setText "http://github.com/ibito"
 
     it "does nothing if no text is selected", ->
       atom.commands.dispatch workspaceView, linkifyCommands.MAKE_LINK_COMMAND
-      expect(editor.getText()).toBe("http://ibito.com")
+      expect(editor.getText()).toBe("http://github.com/ibito")
 
     it "transforms the text into an <a> tag when text that matches a url pattern is selected", ->
       editor.selectAll()
       atom.commands.dispatch workspaceView, linkifyCommands.MAKE_LINK_COMMAND
       expect(editor.getText())
-            .toBe("<a href=\"http://ibito.com\">http://ibito.com</a>")
+            .toBe("<a href=\"http://github.com/ibito\">http://github.com/ibito</a>")
       expect(editor.getLastSelection().getText())
-            .toBe("http://ibito.com")
+            .toBe("http://github.com/ibito")
 
     it "does nothing if the selected text does not match a url pattern", ->
       buffer.setText "ibito.com"
