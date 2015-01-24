@@ -7,6 +7,6 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.editor':
+'.atom-text-editor':
   'alt-cmd-l': 'linkify:make-link'
   'ctrl-alt-l': 'linkify:make-link'
