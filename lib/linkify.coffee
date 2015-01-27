@@ -20,17 +20,18 @@ module.exports =
     selectedTextLength = selectedText.length
     matches = selectedText.match @linkExp
     numberOfMatches = matches?.length or 0
+    anchorClosingTagLength = 0
 
     if matches?
       switch grammar.name
         when "GitHub Markdown"
           editor.insertText @replaceGithubMd selectedText
-          if numberOfMatches < 2
-            @selectLinksText selectedTextLength, ("]()".length + selectedTextLength)
+          anchorClosingTagLength = ']()'.length + selectedTextLength
         else
           editor.insertText @replaceHtml selectedText
-          if numberOfMatches < 2
-            @selectLinksText selectedTextLength, "</a>".length
+          anchorClosingTagLength = '</a>'.length
+
+    @selectLinksText selectedTextLength, anchorClosingTagLength if numberOfMatches < 2
 
 
   selectLinksText: (selectedTextLength, anchorClosingTagLength) ->

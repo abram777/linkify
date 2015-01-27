@@ -40,15 +40,15 @@ describe "Linkify", ->
 
 
   describe "when linkify is activated", ->
-      it "creates #{linkifyCommands.MAKE_LINK_COMMAND} command", ->
-        expect(isCommandLoaded(linkifyCommands.MAKE_LINK_COMMAND)).toBeTruthy()
+    it "creates #{linkifyCommands.MAKE_LINK_COMMAND} command", ->
+      expect(isCommandLoaded(linkifyCommands.MAKE_LINK_COMMAND)).toBeTruthy()
 
 
   describe "when linkify is deactivated", ->
-      beforeEach -> atom.packages.deactivatePackage("linkify")
+    beforeEach -> atom.packages.deactivatePackage("linkify")
 
-      it "destroys #{linkifyCommands.MAKE_LINK_COMMAND} command", ->
-        expect(isCommandLoaded(linkifyCommands.MAKE_LINK_COMMAND)).toBeFalsy()
+    it "destroys #{linkifyCommands.MAKE_LINK_COMMAND} command", ->
+      expect(isCommandLoaded(linkifyCommands.MAKE_LINK_COMMAND)).toBeFalsy()
 
 
   describe "when linkify is toggled", ->
